@@ -1,0 +1,13 @@
+/* TEMPAT MENGATUR GAMBAR BACKGROUND */
+.hero {
+  background-image:
+    linear-gradient(
+      rgba(240, 250, 255, 0.65),
+      rgba(240, 250, 255, 0.65)
+    ),
+    url("images/background/background-utama.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TAN TEHNIK melayani pemasangan AC baru, tambah freon, bongkar pasang AC, cuci AC, dan perbaikan mesin cuci.">
+  <title>TAN TEHNIK | Jasa AC & Mesin Cuci</title>
+  <style>
+    :root{--blue:#08a9d2;--deep:#063b63;--red:#d92848;--ink:#172b3a;--muted:#637787;--light:#f2fbff;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .topbar{background:var(--deep);color:#fff;padding:9px 5%;font-size:14px;text-align:center}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 3px 18px #073b6312}
+    .nav{max-width:1150px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:.4px;color:var(--deep)}
+    .brand-icon{display:grid;place-items:center;background:var(--blue);color:white;border-radius:12px;width:43px;height:43px;font-size:23px}
+    .brand span b{color:var(--red)}
+    .links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+    .links a:hover{color:var(--blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#20b966;color:#fff;padding:13px 19px;border-radius:12px;font-weight:800;border:0;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+    .btn-blue{background:var(--deep)}
+    .hero{
+      position:relative;
+      isolation:isolate;
+      background:
+        linear-gradient(90deg,rgba(239,251,255,.97) 0%,rgba(245,252,255,.91) 48%,rgba(239,251,255,.58) 100%),
+        url('images/background-ac.jpg') center center/cover no-repeat;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(135deg,rgba(8,169,210,.10),transparent 55%,rgba(217,40,72,.06));
+      pointer-events:none;
+    }
+    .hero-inner{max-width:1150px;margin:auto;padding:76px 22px 82px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:44px}
+    .hero-inner>div:first-child{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.85);border-radius:26px;padding:28px;box-shadow:0 18px 50px rgba(6,59,99,.08);backdrop-filter:blur(5px)}
+    .hero h1{ text-shadow:0 2px 0 rgba(255,255,255,.45)}
+    .air-card{border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.92);backdrop-filter:blur(8px)}
+    .eyebrow{display:inline-block;background:#d5f5ff;color:#087da0;border-radius:30px;padding:7px 13px;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(37px,5.2vw,63px);line-height:1.08;letter-spacing:-1.8px;margin:18px 0;color:var(--deep)}
+    h1 span{color:var(--red)}
+    .hero p{font-size:18px;max-width:590px;color:#536b7c;margin:0 0 25px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{font-size:13px!important;margin-top:18px!important}
+    .hero-art{min-height:330px;display:grid;place-items:center;position:relative}
+    .air-card{width:min(100%,370px);padding:35px 28px;background:#fff;border:1px solid #d8f2fa;border-radius:28px;box-shadow:0 25px 70px #087da020;text-align:center;position:relative}
+    .air-icon{font-size:100px;line-height:1.2;filter:drop-shadow(0 9px 8px #08a9d233)}
+    .air-card h3{font-size:24px;color:var(--deep);margin:13px 0 4px}
+    .air-card p{font-size:14px;margin:0 auto;color:var(--muted)}
+    .bubble{position:absolute;border-radius:18px;background:#fff;padding:12px 15px;box-shadow:0 10px 30px #063b6317;font-weight:800;font-size:13px}
+    .bubble.one{top:18px;left:0}.bubble.two{bottom:18px;right:0}
+    section{padding:70px 22px}
+    .section-inner{max-width:1100px;margin:auto}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 35px}
+    .section-head h2{font-size:clamp(28px,3.5vw,40px);line-height:1.2;color:var(--deep);margin:10px 0;letter-spacing:-.7px}
+    .section-head p{color:var(--muted);margin:0}
+    .services{background:#f8fcfe}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:#fff;border:1px solid #e2f0f5;border-radius:19px;padding:25px;box-shadow:0 7px 25px #073b6307;transition:transform .22s,box-shadow .22s;}
+    .service:hover{transform:translateY(-4px);box-shadow:0 14px 32px #073b6312}
+    .service-icon{display:grid;place-items:center;width:55px;height:55px;border-radius:15px;background:#e1f8ff;font-size:27px;margin-bottom:17px}
+    .service h3{margin:0 0 7px;color:var(--deep);font-size:19px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .why{text-align:center;padding:15px}
+    .why .service-icon{margin:0 auto 12px}
+    .why h3{color:var(--deep);margin:8px 0}
+    .why p{color:var(--muted);font-size:14px;margin:0}
+    .contact{background:linear-gradient(125deg,var(--deep),#087fa7);color:#fff}
+    .contact-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .contact h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 12px}
+    .contact p{color:#d8f4ff;margin:0 0 20px}
+    .phone-list{display:flex;flex-direction:column;gap:8px;margin:15px 0 0;font-weight:800}
+    .contact .btn{background:#20b966;white-space:nowrap}
+    footer{background:#052b47;color:#c5d9e4;text-align:center;padding:22px;font-size:13px}
+    .wa-float{position:fixed;right:17px;bottom:17px;z-index:20;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#20b966;color:#fff;font-size:28px;box-shadow:0 8px 25px #063b6340}
+    @media(max-width:760px){
+      .hero{background-position:center center;background-image:linear-gradient(180deg,rgba(242,251,255,.94),rgba(242,251,255,.88)),url('images/background-ac.jpg')}
+      .hero-inner{padding:38px 16px 48px}
+      .hero-inner>div:first-child{padding:22px 18px;border-radius:20px}
+      .topbar{font-size:12px}
+      .nav{padding:10px 16px;flex-wrap:wrap}
+      .brand{font-size:18px}.brand-icon{width:38px;height:38px}
+      .links{order:3;width:100%;justify-content:center;gap:22px;padding:8px 0 3px;font-size:13px}
+      .nav>.btn{padding:10px 12px;font-size:12px}
+      .hero-inner{grid-template-columns:1fr;padding:49px 20px 55px;gap:25px}
+      .hero p{font-size:16px}
+      .hero-art{min-height:285px}
+      .air-card{max-width:320px;padding:25px 18px}
+      .air-icon{font-size:78px}
+      .bubble.one{left:0;top:5px}.bubble.two{right:0;bottom:0}
+      section{padding:55px 18px}
+      .service-grid{grid-template-columns:1fr 1fr;gap:12px}
+      .service{padding:18px}
+      .service h3{font-size:17px}
+      .why-grid{grid-template-columns:1fr;gap:15px}
+      .contact-inner{display:block;text-align:center}
+      .phone-list{align-items:center}
+      .contact .btn{margin-top:22px}
+    }
+    @media(max-width:430px){
+      .hero-inner>div:first-child{padding:19px 15px}
+      .hero h1{letter-spacing:-1px}
+      .links{gap:15px}
+      .nav>.btn{font-size:11px;padding:9px}
+      .brand{font-size:16px;gap:7px}
+      .service-grid{grid-template-columns:1fr}
+      .service{display:flex;gap:15px;align-items:flex-start}
+      .service-icon{flex-shrink:0;margin:0}
+      .hero-actions .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">❄️ Jasa AC & Mesin Cuci • Hubungi kami untuk informasi layanan</div>
+  <header>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="#beranda"><span class="brand-icon">❄️</span><span>TAN <b>TEHNIK</b></span></a>
+      <div class="links">
+        <a href="#beranda">Beranda</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <a class="btn" href="https://wa.me/6281316635003?text=Halo%20TAN%20TEHNIK%2C%20saya%20ingin%20bertanya%20tentang%20layanan." target="_blank" rel="noopener">☏ WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Teknisi AC & Elektronik</span>
+          <h1>AC bermasalah?<br><span>TAN TEHNIK</span> siap membantu.</h1>
+          <p>Melayani pemasangan dan perawatan AC serta perbaikan mesin cuci. Hubungi kami untuk menanyakan layanan yang Anda butuhkan.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/6281316635003?text=Halo%20TAN%20TEHNIK%2C%20saya%20ingin%20memesan%20layanan." target="_blank" rel="noopener">☏ Pesan via WhatsApp</a>
+            <a class="btn btn-blue" href="#layanan">Lihat Layanan ↓</a>
+          </div>
+          <p class="hero-note">📞 0813-1663-5003 &nbsp; • &nbsp; 0831-6390-0612</p>
+        </div>
+        <div class="hero-art" aria-label="Ilustrasi layanan pendingin udara">
+          <div class="bubble one">❄️ Udara lebih sejuk</div>
+          <div class="air-card">
+            <div class="air-icon">❄️</div>
+            <h3>Perawatan AC</h3>
+            <p>Pemasangan, cuci AC, tambah freon, dan bongkar pasang.</p>
+          </div>
+          <div class="bubble two">🧰 Teknisi siap membantu</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="layanan">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="eyebrow">Layanan Kami</span>
+          <h2>Solusi AC dan mesin cuci</h2>
+          <p>Pilih layanan yang Anda perlukan, lalu hubungi kami untuk konsultasi.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><div class="service-icon">🧊</div><div><h3>Pasang AC Baru</h3><p>Jasa pemasangan AC baru untuk rumah, toko, atau tempat usaha.</p></div></article>
+          <article class="service"><div class="service-icon">🛠️</div><div><h3>Tambah Freon</h3><p>Layanan pengecekan dan pengisian freon sesuai kebutuhan AC.</p></div></article>
+          <article class="service"><div class="service-icon">🔧</div><div><h3>Bongkar Pasang AC</h3><p>Bantuan melepas dan memasang kembali unit AC.</p></div></article>
+          <article class="service"><div class="service-icon">💦</div><div><h3>Cuci AC</h3><p>Pembersihan AC untuk membantu menjaga kebersihan dan kinerjanya.</p></div></article>
+          <article class="service"><div class="service-icon">🧺</div><div><h3>Perbaikan Mesin Cuci</h3><p>Layanan pemeriksaan dan perbaikan masalah pada mesin cuci.</p></div></article>
+          <article class="service"><div class="service-icon">💬</div><div><h3>Konsultasi Layanan</h3><p>Tanyakan kebutuhan dan detail pekerjaan melalui WhatsApp.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="eyebrow">Kenapa TAN TEHNIK?</span>
+          <h2>Layanan yang mudah dihubungi</h2>
+          <p>Kami membantu Anda menemukan layanan yang sesuai dengan kebutuhan perangkat di rumah atau tempat usaha.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why"><div class="service-icon">📱</div><h3>Mudah dihubungi</h3><p>Hubungi langsung melalui WhatsApp atau telepon.</p></div>
+          <div class="why"><div class="service-icon">🧰</div><h3>Pilihan layanan lengkap</h3><p>Mulai dari pemasangan dan perawatan AC hingga mesin cuci.</p></div>
+          <div class="why"><div class="service-icon">🤝</div><h3>Konsultasi terlebih dahulu</h3><p>Ceritakan masalah perangkat Anda untuk menanyakan layanan yang tepat.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div class="contact-inner">
+        <div>
+          <h2>Butuh jasa AC atau mesin cuci?</h2>
+          <p>Hubungi TAN TEHNIK untuk menanyakan layanan dan jadwal pengerjaan.</p>
+          <div class="phone-list">
+            <a href="tel:081316635003">📞 0813-1663-5003</a>
+            <a href="tel:083163900612">📞 0831-6390-0612</a>
+          </div>
+        </div>
+        <a class="btn" href="https://wa.me/6281316635003?text=Halo%20TAN%20TEHNIK%2C%20saya%20ingin%20bertanya%20tentang%20jasa%20AC." target="_blank" rel="noopener">Chat WhatsApp Sekarang ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> TAN TEHNIK • Jasa AC & Mesin Cuci</footer>
+  <a class="wa-float" href="https://wa.me/6281316635003?text=Halo%20TAN%20TEHNIK" target="_blank" rel="noopener" aria-label="Chat WhatsApp">☏</a>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
